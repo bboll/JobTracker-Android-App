@@ -1,12 +1,22 @@
 language: android
 
+# sudo required for accepting licenses
 sudo: required
 
+jdk: 
+    - oraclejdk8
+    
 before_install:
+    # Grant gradlew permissions
     - chmod +x gradlew
+    
+    # Accept licenses for Android SDKs
     - mkdir "$ANDROID_HOME/licenses" || true
     - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
     - echo -e "\n504667f4c0de7af1a06de9f4b1727b84351f2910" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
-jdk: 
-    - oraclejdk8
+    # Emulator
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
