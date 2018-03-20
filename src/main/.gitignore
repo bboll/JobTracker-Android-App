@@ -1,0 +1,8 @@
+# Sensitive
+java/com/brianboll/jobtracker/LoginActivity.java
+java/com/brianboll/jobtracker/RegisterActivity.java
+java/lib/DatabaseHandler.java
+java/lib/UserFunctions.java
+
+# Assets
+assets/

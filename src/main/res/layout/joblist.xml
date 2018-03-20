@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/calendartemplate" />
+
+        <TextView
+            android:id="@+id/iconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/icon"
+            android:layout_alignTop="@id/icon"
+            android:layout_alignRight="@id/icon"
+            android:layout_alignBottom="@id/icon"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:paddingTop="25dp"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="39dp">
+
+            <TextView
+                android:id="@+id/Itemname"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:lines="1"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:lines="1"
+                android:id="@+id/ItemID" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Description"
+            android:textColor="#ff919191"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:layout_weight="0.15"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+</LinearLayout>

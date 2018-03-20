@@ -1,0 +1,87 @@
+package lib;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+//TODO: Remove logging for production
+import android.util.Log;
+
+public class JSONParser {
+
+    static InputStream inputstream = null;
+    static JSONObject jsonObj = null;
+    static String json = "";
+
+    // constructor
+    public JSONParser() {
+
+    }
+
+    public JSONObject getJSONFromUrl(String url, List<NameValuePair> params) {
+
+        //TODO: Apache HTTP has been deprecated as of API 22 and removed in 23, implement HttpURLConnection or other library
+        try {
+
+            DefaultHttpClient httpClient = new DefaultHttpClient();
+            HttpPost httpPost = new HttpPost(url);
+            httpPost.setEntity(new UrlEncodedFormEntity(params));
+
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+            HttpEntity httpEntity = httpResponse.getEntity();
+            inputstream = httpEntity.getContent();
+
+        } catch (UnsupportedEncodingException e) {
+            //TODO: Handle exceptions separately
+            //Throwable.printStackTrace just for testing
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            BufferedReader bufferreader = new BufferedReader(new InputStreamReader(
+                    inputstream, "iso-8859-1"), 8);
+            StringBuilder stringbuilder = new StringBuilder();
+            String line = null;
+            while ((line = bufferreader.readLine()) != null) {
+                stringbuilder.append(line + "\n");
+            }
+
+            //Close the connection
+            inputstream.close();
+
+            json = stringbuilder.toString();
+
+        } catch (Exception e) {
+            Log.e("Buffer Error", "Error converting result " + e.toString());
+        }
+
+        // Deserialize
+        try {
+            jsonObj = new JSONObject(json);
+
+        } catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+
+        // return JSON String
+        return jsonObj;
+
+    }
+}
