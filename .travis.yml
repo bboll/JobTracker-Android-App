@@ -6,11 +6,19 @@ sudo: required
 jdk: 
     - oraclejdk8
     
+env:
+  global:
+    - ANDROID_API_LEVEL=22
+    - ANDROID_BUILD_TOOLS_VERSION=26.0.2
+    - ANDROID_ABI=armeabi-v7a
+    
 components:
     - tools
     - platform-tools
-    - android-22
-    - sys-img-armeabi-v7a-android-22
+    - tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - sys-img-$ANDROID_ABI-google_apis-$ANDROID_API_LEVEL
     
 before_install:
     # Grant gradlew permissions
@@ -22,7 +30,7 @@ before_install:
     - echo -e "\n504667f4c0de7af1a06de9f4b1727b84351f2910" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
     # Emulator
-    - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-    - emulator -avd test -no-skin -no-audio -no-window &
+    - echo no | android create avd --force -n test -t android-$ANDROID_API_LEVEL --abi google_apis/$ANDROID_ABI
+    - emulator -avd test -no-window &
     - android-wait-for-emulator
     - adb shell input keyevent 82 &
