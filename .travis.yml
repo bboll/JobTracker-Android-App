@@ -1,7 +1,7 @@
 language: android
 
 # sudo required for accepting licenses
-sudo: required
+sudo: false
 
 jdk: 
   - oraclejdk8
