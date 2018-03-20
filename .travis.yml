@@ -6,6 +6,12 @@ sudo: required
 jdk: 
     - oraclejdk8
     
+components:
+    - tools
+    - platform-tools
+    - android-22
+    - sys-img-armeabi-v7a-android-22
+    
 before_install:
     # Grant gradlew permissions
     - chmod +x gradlew
