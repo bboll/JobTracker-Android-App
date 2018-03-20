@@ -15,12 +15,16 @@ public class UserFunctions {
 
     public JSONObject loginUser(String email, String password) {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
     
     public JSONObject registerUser(String name, String email, String password) {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public String getUserName(Context context) {
@@ -36,54 +40,71 @@ public class UserFunctions {
     public JSONObject createJob()
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public String getUserID(Context context)
     {
         //Stub
+        return String str;
     }
 
     public JSONObject getAssignedJobs(String employeeID)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject getUnassignedJobs()
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject createJob(String jobName, String contactName, String contactPhone, String address, String scope, String date)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject deleteJob(String jobID)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject assignJob(String jobID, String employeeID)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject getUnassignedEmployees(String jobID)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public JSONObject toggleClocked(String jobID, String employeeID, String toggleBit)
     {
         //Stub
-        return JSONObject jObj;
+        JSONObject jObj;
+        
+        return jObj;
     }
 
     public boolean isUserLoggedIn(Context context){
