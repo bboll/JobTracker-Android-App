@@ -15,12 +15,12 @@ public class UserFunctions {
 
     public JSONObject loginUser(String email, String password) {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
     
     public JSONObject registerUser(String name, String email, String password) {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public String getUserName(Context context) {
@@ -36,7 +36,7 @@ public class UserFunctions {
     public JSONObject createJob()
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public String getUserID(Context context)
@@ -47,43 +47,43 @@ public class UserFunctions {
     public JSONObject getAssignedJobs(String employeeID)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject getUnassignedJobs()
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject createJob(String jobName, String contactName, String contactPhone, String address, String scope, String date)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject deleteJob(String jobID)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject assignJob(String jobID, String employeeID)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject getUnassignedEmployees(String jobID)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public JSONObject toggleClocked(String jobID, String employeeID, String toggleBit)
     {
         //Stub
-        return JSONObect jObj;
+        return JSONObject jObj;
     }
 
     public boolean isUserLoggedIn(Context context){
