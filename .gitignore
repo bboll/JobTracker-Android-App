@@ -2,3 +2,7 @@ build/
 app/
 release/
 .idea/
+.gradle/
+
+*.iml
+*.pro
