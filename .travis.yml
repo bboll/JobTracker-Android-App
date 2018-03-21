@@ -16,7 +16,7 @@ env:
   global:
   - ANDROID_API_LEVEL=26
   - ANDROID_BUILD_TOOLS_VERSION=26.0.1
-  - ANDROID_EMU_API_LEVEL=22
+  - ANDROID_EMU_API_LEVEL=24
   - ANDROID_ABI=armeabi-v7a
   - ADB_INSTALL_TIMEOUT=20
   - QEMU_AUDIO_DRV=none
@@ -42,6 +42,7 @@ before_install:
   # Grant gradlew permissions
   - chmod +x gradlew
     
+before_script:
   # Accept licenses for Android SDKs
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
