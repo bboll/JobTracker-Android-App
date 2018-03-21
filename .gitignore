@@ -2,3 +2,5 @@ build/
 app/
 release/
 .idea/
+
+*.iml
