@@ -15,4 +15,4 @@ Prototype Demo (video player):
 Admin and User Guide (.pdf):
 -------
 
-<a href="docs/JobTracker Admin-User Guide.pdf"><img src="http://brianboll.com/images/userguidethumbnail.png" height="300" width="400" ></a>
+<a href="src/main/docs/JobTracker Admin-User Guide.pdf"><img src="http://brianboll.com/images/userguidethumbnail.png" height="300" width="400" ></a>
